@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sc_ase"
+version = "0.0.1"
+authors = [
+  { name="Sean Simmons", email="ssimmons@broadinstitute.org" },
+]
+description = "A python package to upload the output of our ASE pipeline."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/seanken/scASE_py"
+"ASEPipeline" = "https://github.com/seanken/ASE_pipeline"
