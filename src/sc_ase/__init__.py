@@ -1,5 +1,5 @@
-from scAllelePy.scAlleleExpression import *
-from scAllelePy.loadExpression import *
+from sc_ase.scAlleleExpression import *
+from sc_ase.loadExpression import *
 
-__version__ = '0.1.0'
+__version__ = '0.0.1'
 

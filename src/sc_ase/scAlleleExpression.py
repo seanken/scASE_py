@@ -30,9 +30,12 @@ def LoadGeneLevel(meta: pd.DataFrame,genes: list[str],tag: str) -> pd.DataFrame:
 
     ##Get the Gene level ASE and combined into on data frame
     aseList=[getGeneASE(metaSplit,genes,tag) for metaSplit in splitMetaBySamp]
-    dat=pd.concat(aseList,0)
+
+    dat=pd.concat(aseList)
 
     return(dat)
+
+
 
 ##Given a meta data table prepperd with UpdateMeta and a list of genes and a list of snps, get the ASE information for those genes with ref vs alt alignment based on the SNP
 def LoadSNPLevel(meta: pd.DataFrame,snps: list[str],genes: list[str],tag: str) -> pd.DataFrame:
@@ -75,6 +78,7 @@ def getGeneASE(meta: pd.DataFrame,genes: list[str],tag: str) -> pd.DataFrame:
     cts.loc[:,"Sample"]=[samp for i in cts["CBC"]]
     cts=cts[cts["Allele"]!="Ambig"]
     print(cts.shape)
+    print(cts.head())
     return(cts)
 
 
