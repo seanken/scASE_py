@@ -6,7 +6,7 @@ An R package to work with the pipeline, as well as other downstream analysis, is
 
 ## Install package
 
-Need to install scanpy, anndata, and pandas.
+Need to install anndata and pandas.
 
 Once that is done can install with `pip install git+https://github.com/seanken/scASE_py`
 

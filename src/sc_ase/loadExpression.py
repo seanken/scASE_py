@@ -1,6 +1,6 @@
 import pandas as pd
 import anndata as ad
-import scanpy as sc
+#import scanpy as sc
 from anndata import read_mtx 
 from .scAlleleExpression import AggPerSamp
 ##Will load expression
