@@ -1,6 +1,7 @@
 import pandas as pd
 pd.options.mode.chained_assignment = None
 
+
 ##
 ##A python package to load the output of our ASE pipeline
 ##
@@ -46,7 +47,7 @@ def LoadSNPLevel(meta: pd.DataFrame,snps: list[str],genes: list[str],tag: str) -
 
     ##Get the SNP level ASE and combined into on data frame
     aseList=[getSNPASE(metaSplit,snps,genes,tag) for metaSplit in splitMetaBySamp]
-    dat=pd.concat(aseList,0)
+    dat=pd.concat(aseList)
     return(dat)
 
 ##Gets a table with one entry per sample, with columns corresponding to sample name, SNP file, and Allele file from the pipeline
@@ -114,12 +115,12 @@ def toSNPCounts(cts: pd.DataFrame,snp: str,snpTable: pd.DataFrame) -> pd.DataFra
     phaseSNP=listSNP[0]
 
     ##If needed flips Allele so matches SNP phase
-    if phaseSNP=="1|0":
+    if phaseSNP=="1|0" or phaseSNP=="1/0":
         swapAll=lambda a: "All1" if a=="All2" else "All2"
         cts.loc[:,"Allele"]=[swapAll(allele) for allele in cts["Allele"]]
     
     ##If not het SNP removes (shouldn't be an issue)
-    if phaseSNP!="1|0" and phaseSNP!="0|1":
+    if phaseSNP!="1|0" and phaseSNP!="1/0" and phaseSNP!="0|1" and phaseSNP!="0/1":
         cts["Count"]=[0 for i in cts["Count"]]
     cts.loc[:,"SNP"]=[snp for i in cts["Count"]]
     return(cts)
