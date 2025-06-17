@@ -46,5 +46,4 @@ where dat is an AnnData object. There is also a method, `readStarSolo`, to load 
 Finally there is also experimental support for running scDali (https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02593-8) on the meta data we created above with the method `Run_scDali`, though this approach often crashes.
 
 
-
-
+This work was funded by Aligning Science Across Parkinson's [grant # ASAP-000301] through the Michael J. Fox Foundation for Parkinson's Research (MJFF).
